@@ -1,0 +1,22 @@
+<div class="card py-3 px-4">
+  <h5 class="border-bottom border-dark pb-3">
+    Support for donor organizations
+  </h5>
+  @for ( supportOrganization of supportOrganizations$ | async; track
+  supportOrganization.username ) {
+  <div class="d-flex mt-1 align-items-center">
+    <img
+      [src]="supportOrganization.profileImage"
+      alt="Organization Logo"
+      class="avatar"
+      width="55"
+      height="55"
+    />
+    <div class="ms-3">
+      <h6>{{ supportOrganization.username }}</h6>
+      <p class="mb-1">{{ supportOrganization.description }}</p>
+      <p>{{ supportOrganization.contact }}</p>
+    </div>
+  </div>
+  }
+</div>
