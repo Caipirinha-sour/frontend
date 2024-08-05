@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+//Toast
+@import url("assets/styles/toast.css");
+
+//overrides
+.form-control:focus {
+  border-color: #05ad75 !important;
+  box-shadow: none;
+}
+.form-control::placeholder {
+  color: #b8b8b8 !important;
+  font-weight: 300 !important;
+}
+
+//custom
+.text-custom {
+  color: #40a745;
+}
+
+.bg-custom {
+  background-color: #40a745;
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";

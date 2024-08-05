@@ -1,0 +1,8 @@
+<div class="card py-3 px-4">
+  <h5 class="border-bottom border-dark pb-3">Emergency Numbers</h5>
+  @for (emergencyNumber of emergencyNumbers$ |async; track emergencyNumber.name)
+  {
+  <h6 class="mt-1">{{ emergencyNumber.name }}:</h6>
+  <p>{{ emergencyNumber.phone }}</p>
+  }
+</div>

@@ -1,0 +1,22 @@
+<div class="card p-3 mt-3">
+  <div class="d-flex justify-content-between">
+    <div class="d-flex align-items-center">
+      <img
+        [src]="post?.citizen?.profileImage"
+        alt="User Avatar"
+        class="avatar"
+        style="width: 50px; height: 50px"
+      />
+      <h5 class="ms-3 card-title">{{ post?.citizen?.username }}</h5>
+    </div>
+    <div class="">
+      <p>
+        Tag: <strong>{{ post?.tag?.name }}</strong>
+      </p>
+    </div>
+  </div>
+  <div class="mt-3">
+    <p class="d-block">{{ post?.text }}</p>
+    <img [src]="post?.mediaUrl" class="w-100" alt="User Avatar" />
+  </div>
+</div>

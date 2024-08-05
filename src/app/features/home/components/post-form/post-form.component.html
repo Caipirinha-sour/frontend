@@ -1,0 +1,49 @@
+<form [formGroup]="form" class="needs-validation" (ngSubmit)="onSave()">
+  <div class="p-5 d-flex gap-3 flex-column">
+    <div class="d-flex justify-content-between">
+      <h3 class="">New Post</h3>
+      <button
+        type="button"
+        class="btn-close"
+        (click)="activeModal.dismiss('Cross click')"
+      ></button>
+    </div>
+
+    <textarea
+      id="text"
+      class="form-control"
+      placeholder="Create a new Post"
+      rows="4"
+      formControlName="text"
+      maxlength="255"
+    ></textarea>
+    <label class="h5" for="mediaUrl">Image URL (optional)</label>
+    <input
+      formControlName="mediaUrl"
+      type="text"
+      id="mediaUrl"
+      class="form-control"
+      placeholder="Image URL"
+    />
+    <div class="tag-content d-flex justify-content-between">
+      <label class="h5">Tags</label>
+      @for (tag of tags$ |async; track tag.id) {
+      <div class="form-check form-check-inline">
+        <input
+          type="radio"
+          class="form-check-input"
+          id="radio{{ tag.id }}"
+          formControlName="tagId"
+          [value]="tag.id"
+        />
+        <label class="form-check-label" for="radio{{ tag.id }}">{{
+          tag.name
+        }}</label>
+      </div>
+      }
+    </div>
+    <div class="text-end">
+      <button class="btn bg-custom text-white">Publish</button>
+    </div>
+  </div>
+</form>
